@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-Like Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(233, 144, 144);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .main {
+            background-color: white;
+            display: flex;
+            width: 950px;
+            height: 610px;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .container {
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 370px;
+            height: 570px;
+            border-radius: 10px;
+            text-align: center; /* Center content */
+        }
+
+        .cont {
+            padding: 20px;
+            background-image: url('anurag1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 680px;
+            height: 570px;
+            position: absolute;
+            left: 411px;
+            border-radius: 10px;
+        }
+
+        .vertical-line {
+            position: absolute;
+            border-left: 3px solid #000;
+            height: 610px;
+            margin: 0;
+            top: 0;
+            left: 410px;
+        }
+
+        .app-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    position: relative; /* Add this line to enable absolute positioning for children */
+}
+
+.IV-Class {
+    background-color: #7c97b4;
+    height: 250px;
+    width: 350px;
+    border-radius: 10%;
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Move the top to the middle of the container */
+    left: 50%; /* Move the left to the middle of the container */
+    transform: translate(-50%, -50%); /* Center the element precisely */
+}
+
+.III-Class {
+    background-color: #7c97b4;
+    height: 250px;
+    width: 350px;
+    border-radius: 10%;
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Move the top to the middle of the container */
+    left: 50%; /* Move the left to the middle of the container */
+    transform: translate(-50%, -50%); /* Center the element precisely */
+}
+
+.II-Class {
+    background-color: #7c97b4;
+    height: 250px;
+    width: 350px;
+    border-radius: 10%;
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Move the top to the middle of the container */
+    left: 50%; /* Move the left to the middle of the container */
+    transform: translate(-50%, -50%); /* Center the element precisely */
+}
+
+        
+        img{
+
+            height: 100px;
+            width:250px;
+        }
+        
+        
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function login() {
+            // Hide the main container
+            document.querySelector('.main').style.display = 'none';
+    
+            // Display the app container
+            document.getElementById('app-container').style.display = 'block';
+    
+            // Show an alert for successful login
+            alert('Logged in successfully');
+        }
+    </script>
+    
+</head>
+<body>
+
+    <div class="main">
+        <div class="container" id="container">
+            <br><br><br><br><br>
+            <img src="https://www.careerguide.com/career/wp-content/uploads/2023/07/Anurag-University-1.png">
+            <h2>Login</h2>
+            
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" autocomplete="off" required><br>
+                <label for="emp">Employee ID:</label>
+                <input type="text" id="emp" name="Employee ID" autocomplete="off" required><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" autocomplete="off" required><br>
+                <button type="button" onclick="login()">Login</button>
+            </form>
+        </div>
+
+        <div class="cont"></div>
+
+        <div class="vertical-line"></div>
+    </div>
+
+    <div class="logo-container">
+        <img src="https://www.careerguide.com/career/wp-content/uploads/2023/07/Anurag-University-1.png " >
+    </div>
+
+    
+    <div class="app-container" id="app-container" style="display: none;">
+            <div class="IV-Class">
+
+            </div>
+            <div class="III-Class">
+
+            </div>
+            <div class="II-Class">
+
+            </div>
+        </div>
+
+</body>
+</html>

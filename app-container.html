@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-Like Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(233, 144, 144);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .app-container{
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: 450px;
+            width: 350px;
+            text-align: center;
+            display: block;
+        }
+        
+        img{
+
+            height: 100px;
+            width:250px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        width: 120px; /* Adjust the width to your preference */
+    }
+
+    #contentInput{
+        width: 160px;
+        height: 100px;
+        vertical-align: top;
+        border-radius: 10px;
+    }
+        
+    input,
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 160px;
+    }
+        
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+    <script>
+        function scheduleForm() {
+    document.querySelector('.main').style.display = 'none';
+    document.getElementById('app-container').style.display = 'none';
+
+    // Get the values from the form
+    var className = document.getElementById('classSelect').value;
+    var content = document.getElementById('contentInput').value;
+    var timings = document.getElementById('timingsInput').value;
+
+    // Update the schedules content
+    var schedulesContainer = document.getElementById('schedules-container');
+    schedulesContainer.innerHTML = '<h3>Announcements for ' + className + '</h3>' +   '<p>' + content + '</p>';
+    schedulesContainer.style.display = 'block';
+}
+
+    </script>
+</head>
+
+<body>
+<div class="app-container" id="app-container" >
+        
+            <div class="logo-container">
+                <img src="https://www.careerguide.com/career/wp-content/uploads/2023/07/Anurag-University-1.png " >
+            </div>
+        
+            <div class="form-group">
+                <form action="/process_data" method="post">
+
+                    <label for="classSelect">Class:</label>
+                    <select id="classSelect" name="class">
+                        <option value="IV-DS-A">IV DS-A</option>
+                        <option value="III-DS-A">III DS-A</option>
+                        <option value="III-DS-B">III DS-B</option>
+                        <option value="II-DS-A">II DS-A</option>
+                        <option value="II-DS-B">II DS-B</option>
+                        <option value="II-DS-C">II DS-C</option>
+                        <option value="II-DS-D">II DS-D</option>
+                        <option value="II">All II DS Students</option>
+                        <option value="III">All III DS Students</option>
+                    </select>
+                    <br><br>
+                    
+                    <label for="contentInput">Content to Announce:</label>
+                    <textarea id="contentInput" name="content" placeholder="Enter announcement content" autocomplete="off"></textarea>
+                    <br><br>
+
+                    <label for="timingsInput">Timings:</label>
+                    <input type="time" id="timingsInput" name="time" placeholder="Enter timings" autocomplete="off">
+
+                    <br><br><br>
+
+                    
+                
+                    <button type="submit" onclick="submitForm()">Submit</button> 
+        
+                </form>
+
+            </div>
+        </div>
+        <div class="schedules" id="schedules-container" style="display: none;">
+            <h3>Here are the announcements made</h3>    
+            <!-- Add your schedule content here -->
+        </div>
+</body>
+</html>
